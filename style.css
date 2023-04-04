@@ -118,9 +118,9 @@ body{
 
 
 /* Small Screens */
-@media (min-width:400px) and (max-width:999px){
+@media (min-width:300px) and (max-width:999px){
     .container{
-        width: 70%;
+        width: 100%;
         margin: auto;
         background-color:#5C5CFF;
         text-align: center;
@@ -145,7 +145,7 @@ body{
 /* Large Screens */
 @media (min-width:1000px){
     .container{
-        width: 70%;
+        width: 90%;
         margin: auto;
         background-color:#5C5CFF;
         text-align: center;
