@@ -12,16 +12,6 @@ body{
     overflow: hidden;
 }
 
-.container::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    background-color: #8A8AFF;
-    border-bottom-right-radius: 300px;
-}
 
 .title{
     color: #CCDADA;
@@ -123,4 +113,56 @@ body{
 .checkmark {
     height: 25px;
     width: 25px;
+}
+
+
+
+/* Small Screens */
+@media (min-width:400px) and (max-width:999px){
+    .container{
+        width: 70%;
+        margin: auto;
+        background-color:#5C5CFF;
+        text-align: center;
+        margin-top: 80px;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .containerofalldata{
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    
+}
+
+
+
+/* Large Screens */
+@media (min-width:1000px){
+    .container{
+        width: 70%;
+        margin: auto;
+        background-color:#5C5CFF;
+        text-align: center;
+        margin-top: 80px;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .container::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 200px;
+        background-color: #8A8AFF;
+        border-bottom-right-radius: 300px;
+    }
 }
