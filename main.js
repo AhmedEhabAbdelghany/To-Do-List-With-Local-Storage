@@ -28,31 +28,49 @@ if(JSON.parse(localStorage.getItem("To Do List")) != null){
 
 // For Display Data
 function display (view){
-    var todocontainer = "";
-    for(var i = 0; i<view.length ; i++)
-    {
-        todocontainer += `
-        <table class="outputtable"><tr> <td><input type="checkbox" id="todocheck" class="checkmark" onClick="donetodo(${view[i].tId})"></td><td><p id="mypar">${view[i].todo}</p></td><td><button class="delete" onClick="deletetodo(${view[i].tId})">Delete</button></td></tr></table>
-        `
-    }
-    displaydata.innerHTML = todocontainer
+  var todocontainer = "";
+  for (var i = 0; i < view.length; i++) {
+    todocontainer += `
+    <table class="outputtable">
+      <tr>
+        <td>
+          <input
+            type="checkbox"
+            id="todocheck"
+            class="checkmark"
+            onClick="donetodo(${view[i].tId})"
+          />
+        </td>
+        <td><p id="mypar" class="mypar">${view[i].todo}</p></td>
+        <td>
+          <button class="delete" onClick="deletetodo(${view[i].tId})">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </table>
+        `;
+  }
+  displaydata.innerHTML = todocontainer;
 }
-
-
-
-
 
 // Done
+var isChecked = false
 function donetodo(id) {
-    var pindex = todolist.findIndex(gettodoindex)
-    function gettodoindex(item){
-        return item.tId == id;
+var paraghraphs = document.getElementsByClassName("mypar");
+var pindex = todolist.findIndex(gettodoindex);
+    function gettodoindex(item) {
+      return item.tId == id;
     }
-    var mypara = todolist[pindex].todo;
-    console.log(mypara)
+    if (!isChecked) {
+    paraghraphs[pindex].style.textDecoration = "line-through"
+    isChecked = true;
+  }
+else{
+    paraghraphs[pindex].style.textDecoration = "none";
+     isChecked = false;
+  }
 }
-
-
 
 
 // Delete Data
