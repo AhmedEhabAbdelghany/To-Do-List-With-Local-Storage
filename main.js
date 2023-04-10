@@ -52,11 +52,12 @@ function display (view){
         `;
   }
   displaydata.innerHTML = todocontainer;
-}
 
-// Done
-var isChecked = false
-function donetodo(id) {
+  // Done
+}
+  
+ var isChecked = false
+  function donetodo(id) {
 var paraghraphs = document.getElementsByClassName("mypar");
 var pindex = todolist.findIndex(gettodoindex);
     function gettodoindex(item) {
